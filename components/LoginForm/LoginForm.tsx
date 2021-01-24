@@ -1,18 +1,17 @@
 import { Formik, Form } from "formik";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Form as BsForm } from "react-bootstrap";
 import * as Yup from "yup";
 import { Input } from "..";
-import { LoginContext } from "../../context/login-context";
+import { DynamicTable } from "..";
 
 const LoginForm = props => {
-  const { setFirstname, setAuthenticated } = useContext(LoginContext);
+  const [rowCount, setRowCount] = useState(0);
+  const [columnCount, setColumnCount] = useState(0);
 
   const formValues = {
-    firstname: "",
-    lastname: "",
-    email: "",
-    password: ""
+    rowCount: 0,
+    columnCount: 0
   };
 
   const validationSchema = Yup.object({
@@ -27,67 +26,48 @@ const LoginForm = props => {
   });
 
   const onSubmit = values => {
-    setFirstname(values.firstname);
-    setAuthenticated(true);
-    props.history.push("/home");
+    setRowCount(values.rowCount);
+    setColumnCount(values.columnCount);
     console.log("values", values);
   };
 
   return (
-    <Formik
-      initialValues={formValues}
-      validationSchema={validationSchema}
-      onSubmit={onSubmit}
-    >
-      {formik => (
-        <Form>
-          <div className="p-3">
-            <BsForm.Row>
-              <Input
-                controlId="firstname"
-                name="firstname"
-                type="text"
-                label="Firstname"
-                hint="firstname"
-                placeholder="Firstname"
-              />
-              <Input
-                controlId="lastname"
-                name="lastname"
-                type="text"
-                label="Lastname"
-                hint="Lastname"
-                placeholder="Lastname"
-              />
-            </BsForm.Row>
-            <BsForm.Row>
-              <Input
-                controlId="email"
-                name="email"
-                type="email"
-                label="Email"
-                hint="email"
-                placeholder="Email"
-              />
-              <Input
-                controlId="password"
-                name="password"
-                type="password"
-                label="Password"
-                hint="password"
-                placeholder="Password"
-              />
-            </BsForm.Row>
-            <hr />
-          </div>
-          <div className="d-flex p-3">
-            <Button variant="light" className="flex-fill" type="submit">
-              Submit
-            </Button>
-          </div>
-        </Form>
-      )}
-    </Formik>
+    <div>
+      <Formik
+        initialValues={formValues}
+        validationSchema={validationSchema}
+        onSubmit={onSubmit}
+      >
+        {formik => (
+          <Form>
+            <div className="p-3">
+              <BsForm.Row>
+                <Input
+                  controlId="rowCount"
+                  name="rowCount"
+                  type="number"
+                  label="Row"
+                  hint="Count of rows"
+                />
+                <Input
+                  controlId="columnCount"
+                  name="columnCount"
+                  type="number"
+                  label="Column"
+                  hint="Count of columns"
+                />
+              </BsForm.Row>
+            </div>
+            <div className="d-flex p-3">
+              <Button variant="light" className="flex-fill" type="submit">
+                Submit
+              </Button>
+            </div>
+          </Form>
+        )}
+      </Formik>
+      <DynamicTable rowCount={rowCount} columnCount={columnCount} />
+    </div>
   );
 };
 
