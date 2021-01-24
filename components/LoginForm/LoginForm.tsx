@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import { Button, Form as BsForm } from "react-bootstrap";
 import * as Yup from "yup";
 import { Input } from "..";
-import { DynamicTable } from "..";
+import { DynamicTable } from "../DynamicTable/DynamicTable";
 
 const LoginForm = props => {
   const [rowCount, setRowCount] = useState(0);
