@@ -2,7 +2,7 @@ import React from "react";
 import { DynamicTable, FormCard } from "../components";
 import { AppContextProvider } from "../context";
 
-const LoginPage = props => {
+const WelcomePage = props => {
   return (
     <AppContextProvider>
       <div className="login-page mt-5 pt-5 d-flex justify-content-center">
@@ -15,4 +15,4 @@ const LoginPage = props => {
   );
 };
 
-export { LoginPage };
+export { WelcomePage };

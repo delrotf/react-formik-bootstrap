@@ -9,8 +9,8 @@ const TableForm = props => {
   const {setRowCount, setColumnCount} = useContext(AppContext);
 
   const formValues = {
-    rowCount: 0,
-    columnCount: 0
+    rowCount: "",
+    columnCount: ""
   };
 
   const validationSchema = Yup.object({
@@ -52,8 +52,8 @@ const TableForm = props => {
               </BsForm.Row>
             </div>
             <div className="d-flex p-3">
-              <Button variant="light" className="flex-fill" type="submit">
-                Submit
+              <Button variant="primary" className="flex-fill" type="submit">
+                Create
               </Button>
             </div>
           </Form>
