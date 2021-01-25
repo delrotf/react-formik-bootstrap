@@ -5,11 +5,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./style.scss";
 
-interface AppProps {}
-interface AppState {
-  name: string;
-}
-
 const App = () => {
   return <LoginPage />;
 };

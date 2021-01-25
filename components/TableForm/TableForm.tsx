@@ -3,11 +3,10 @@ import React, { useContext, useState } from "react";
 import { Button, Form as BsForm } from "react-bootstrap";
 import * as Yup from "yup";
 import { Input } from "..";
-import { LoginContext } from "../../context";
-import { DynamicTable } from "../DynamicTable/DynamicTable";
+import { AppContext } from "../../context";
 
-const LoginForm = props => {
-  const {setRowCount, setColumnCount} = useContext(LoginContext);
+const TableForm = props => {
+  const {setRowCount, setColumnCount} = useContext(AppContext);
 
   const formValues = {
     rowCount: 0,
@@ -64,4 +63,4 @@ const LoginForm = props => {
   );
 };
 
-export { LoginForm };
+export { TableForm };

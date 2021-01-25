@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 
-export const LoginContext = React.createContext({
+export const AppContext = React.createContext({
   rowCount: 0,
   setRowCount: null,
   columnCount: 0,
   setColumnCount: null
 });
 
-const LoginContextProvider = props => {
+const AppContextProvider = props => {
   const [rowCount, setRowCount] = useState(0);
   const [columnCount, setColumnCount] = useState(0);
   return (
-    <LoginContext.Provider
+    <AppContext.Provider
       value={{
         rowCount,
         setRowCount,
@@ -20,8 +20,8 @@ const LoginContextProvider = props => {
       }}
     >
       {props.children}
-    </LoginContext.Provider>
+    </AppContext.Provider>
   );
 };
 
-export { LoginContextProvider };
+export { AppContextProvider };

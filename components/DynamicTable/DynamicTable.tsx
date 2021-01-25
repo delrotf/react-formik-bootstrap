@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { Table } from "react-bootstrap";
-import { LoginContext } from "../../context";
+import { AppContext } from "../../context";
 
 const DynamicTable = props => {
-  const { rowCount, columnCount } = useContext(LoginContext);
+  const { rowCount, columnCount } = useContext(AppContext);
 
   console.log("rowCount, columnCount", rowCount, columnCount);
   const rows = [];
