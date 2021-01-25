@@ -5,7 +5,7 @@ const SimpleTable = props => {
   const { rows } = props;
 
   return (
-    <div>
+    <div className="m-3">
       <Table className="shadow-lg" bordered>
         <tbody>
           {rows.map((row, index) => (
