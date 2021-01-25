@@ -15,14 +15,8 @@ const LoginForm = props => {
   };
 
   const validationSchema = Yup.object({
-    firstname: Yup.string().required("This field is required."),
-    lastname: Yup.string().required("This field is required."),
-    email: Yup.string()
-      .required("This field is required.")
-      .email("Invalid format."),
-    password: Yup.string()
-      .required("This field is required.")
-      .min(8, "At least ${min} characters.")
+    rowCount: Yup.number().required("This field is required.").positive("Must be positive").integer("No Decimal"),
+    columnCount: Yup.number().required("This field is required.").positive("Must be positive").integer("No Decimal"),
   });
 
   const onSubmit = values => {
