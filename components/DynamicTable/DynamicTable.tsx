@@ -20,18 +20,22 @@ const DynamicTable = props => {
   console.log(rows);
 
   return (
-    <div className="d-flex justify-content-center flex-column align-items-center">
+    <div className="d-flex justify-content-center align-items-end">
       {!rowCount && !columnCount && (
         <div className="lead">
           Start entering rows and columns and see the magic happens here.
         </div>
       )}
-      {!!rowCount && !!columnCount && <SimpleTable rows={rows}/>}
+      {!!rowCount && !!columnCount && <SimpleTable rows={rows} />}
 
-      {!!rowCount && !!columnCount && <FancyCells rows={rows} cellClassName="fancy-cell" />}
-   
-      {!!rowCount && !!columnCount && <FancyCells rows={rows} cellClassName="skewed-cell" />}
-       </div>
+      {!!rowCount && !!columnCount && (
+        <FancyCells rows={rows} cellClassName="fancy-cell" />
+      )}
+
+      {!!rowCount && !!columnCount && (
+        <FancyCells rows={rows} cellClassName="skewed-cell" />
+      )}
+    </div>
   );
 };
 

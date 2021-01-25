@@ -15,7 +15,7 @@ const FancyCells = props => {
         </div>
       ))}
       <div className="text-muted text-center mt-3">
-        <span>Table with fancy cells with effect on hover.</span>
+        <span>Fancy Table with cells with effect on hover.</span>
       </div>
     </div>
   );
