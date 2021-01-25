@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Table } from "react-bootstrap";
 import { AppContext } from "../../context";
-import { HoverableCells } from "../HoverableCells/HoverableCells";
+import { FancyCells } from "../FancyCells/FancyCells";
 import { SimpleTable } from "../SimpleTable/SimpleTable";
 
 const DynamicTable = props => {
@@ -28,8 +28,10 @@ const DynamicTable = props => {
       )}
       {!!rowCount && !!columnCount && <SimpleTable rows={rows}/>}
 
-      {!!rowCount && !!columnCount && <HoverableCells rows={rows} />}
-    </div>
+      {!!rowCount && !!columnCount && <FancyCells rows={rows} cellClassName="fancy-cell" />}
+   
+      {!!rowCount && !!columnCount && <FancyCells rows={rows} cellClassName="skewed-cell" />}
+       </div>
   );
 };
 

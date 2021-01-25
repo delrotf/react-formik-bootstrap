@@ -1,14 +1,14 @@
 import React from "react";
 
-const HoverableCells = props => {
-  const { rows } = props;
+const FancyCells = props => {
+  const { rows, cellClassName } = props;
   return (
     <div className="m-3">
       {rows.map((row, index) => (
         <div key={index} className="d-flex justify-content-center">
           {row.map((col, index) => (
             <span
-              className="fancy-cell d-inline-block m-1 shadow border"
+              className={`${cellClassName} d-inline-block m-1 shadow border`}
               key={index}
             />
           ))}
@@ -21,4 +21,4 @@ const HoverableCells = props => {
   );
 };
 
-export { HoverableCells };
+export { FancyCells };
