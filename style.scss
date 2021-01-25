@@ -15,7 +15,18 @@
   }
 }
 
-.cell {
+.simple-cell {
+  background-color: white;
+  width: 60px;
+  height: 60px;
+
+  &:hover {
+    border: solid;
+    border-color: red;
+  }
+}
+
+.fancy-cell {
   background-color: white;
   width: 60px;
   height: 60px;

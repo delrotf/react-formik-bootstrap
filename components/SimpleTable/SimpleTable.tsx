@@ -11,14 +11,14 @@ const SimpleTable = props => {
           {rows.map((row, index) => (
             <tr key={index}>
               {row.map((col, index) => (
-                <td key={index} />
+                <td key={index} className="simple-cell"/>
               ))}
             </tr>
           ))}
         </tbody>
       </Table>
       <div className="text-muted text-center">
-        <span>Version 1. Simple table.</span>
+        <span>Table with simple cells with effect on hover.</span>
       </div>
     </div>
   );
