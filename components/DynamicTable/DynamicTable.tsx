@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Table } from "react-bootstrap";
 import { AppContext } from "../../context";
 import { HoverableCells } from "../HoverableCells/HoverableCells";
+import { SimpleTable } from "../SimpleTable/SimpleTable";
 
 const DynamicTable = props => {
   const { rowCount, columnCount } = useContext(AppContext);
@@ -25,21 +26,9 @@ const DynamicTable = props => {
           Start entering rows and columns and see the magic happens here.
         </div>
       )}
-      {!!rowCount && !!columnCount && (
-        <Table className="shadow-lg" bordered>
-          <tbody>
-            {rows.map((row, index) => (
-              <tr key={index}>
-                {row.map((col, index) => (
-                  <td key={index} />
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </Table>
-      )}
+      {!!rowCount && !!columnCount && <SimpleTable rows={rows}/>}
 
-      <HoverableCells rows={rows} />
+      {!!rowCount && !!columnCount && <HoverableCells rows={rows} />}
     </div>
   );
 };
