@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Table } from "react-bootstrap";
+import { LoginContext } from "../../context";
 
 const DynamicTable = props => {
-  const { rowCount, columnCount } = props;
+  const { rowCount, columnCount } = useContext(LoginContext);
+  
   console.log('rowCount, columnCount', rowCount, columnCount)
   const rows = [];
   for (let i = 0; i < rowCount; i++) {

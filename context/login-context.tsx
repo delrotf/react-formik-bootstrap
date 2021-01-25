@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 
 export const LoginContext = React.createContext({
-  firstname: null,
-  setFirstname: null,
-  authenticated: null,
-  setAuthenticated: null
+  rowCount: 0,
+  setRowCount: null,
+  columnCount: 0,
+  setColumnCount: null
 });
 
 const LoginContextProvider = props => {
-  const [firstname, setFirstname] = useState();
-  const [authenticated, setAuthenticated] = useState();
+  const [rowCount, setRowCount] = useState(0);
+  const [columnCount, setColumnCount] = useState(0);
   return (
     <LoginContext.Provider
       value={{
-        firstname,
-        setFirstname,
-        authenticated,
-        setAuthenticated
+        rowCount,
+        setRowCount,
+        columnCount,
+        setColumnCount
       }}
     >
       {props.children}

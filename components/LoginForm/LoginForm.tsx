@@ -3,11 +3,11 @@ import React, { useContext, useState } from "react";
 import { Button, Form as BsForm } from "react-bootstrap";
 import * as Yup from "yup";
 import { Input } from "..";
+import { LoginContext } from "../../context";
 import { DynamicTable } from "../DynamicTable/DynamicTable";
 
 const LoginForm = props => {
-  const [rowCount, setRowCount] = useState(0);
-  const [columnCount, setColumnCount] = useState(0);
+  const {setRowCount, setColumnCount} = useContext(LoginContext);
 
   const formValues = {
     rowCount: 0,
@@ -60,7 +60,6 @@ const LoginForm = props => {
           </Form>
         )}
       </Formik>
-      <DynamicTable rowCount={rowCount} columnCount={columnCount} />
     </div>
   );
 };
