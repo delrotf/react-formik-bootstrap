@@ -8,7 +8,7 @@ const HoverableCells = props => {
         <div key={index}>
           {row.map((col, index) => (
             <span
-              className="cell cell-with-hover d-inline-block m-1 shadow border"
+              className="fancy-cell d-inline-block m-1 shadow border"
               key={index}
             />
           ))}
