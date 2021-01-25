@@ -1,4 +1,4 @@
-export * from "./LoginCard";
+export * from "./FormCard";
 export * from "./LoginForm";
 export * from "./Input";
 export * from "./DynamicTable";
