@@ -16,6 +16,7 @@ const Input = props => {
               <Form.Control
                 type={type}
                 placeholder={placeholder}
+                isValid={meta.touched && !!!meta.error}
                 isInvalid={meta.touched && !!meta.error}
                 {...field}
               />

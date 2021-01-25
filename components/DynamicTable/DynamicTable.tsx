@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Table } from "react-bootstrap";
 import { AppContext } from "../../context";
+import { HoverableCells } from "../HoverableCells/HoverableCells";
 
 const DynamicTable = props => {
   const { rowCount, columnCount } = useContext(AppContext);
@@ -18,17 +19,28 @@ const DynamicTable = props => {
   console.log(rows);
 
   return (
-    <Table bordered>
-      <tbody>
-        {rows.map((row, index) => (
-          <tr key={index}>
-            {row.map((col, index) => (
-              <td key={index} />
+    <div className="d-flex justify-content-center flex-column align-items-center">
+      {!rowCount && !columnCount && (
+        <div className="lead">
+          Start entering rows and columns and see the magic happens here.
+        </div>
+      )}
+      {!!rowCount && !!columnCount && (
+        <Table className="shadow-lg" bordered>
+          <tbody>
+            {rows.map((row, index) => (
+              <tr key={index}>
+                {row.map((col, index) => (
+                  <td key={index} />
+                ))}
+              </tr>
             ))}
-          </tr>
-        ))}
-      </tbody>
-    </Table>
+          </tbody>
+        </Table>
+      )}
+
+      <HoverableCells rows={rows} />
+    </div>
   );
 };
 
