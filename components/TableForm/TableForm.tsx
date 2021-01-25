@@ -14,8 +14,8 @@ const TableForm = props => {
   };
 
   const validationSchema = Yup.object({
-    rowCount: Yup.number().required("This field is required.").positive("Must be positive").integer("No Decimal"),
-    columnCount: Yup.number().required("This field is required.").positive("Must be positive").integer("No Decimal"),
+    rowCount: Yup.number().required("This field is required.").positive("Must be positive").integer("No Decimal").max(4, "Max of ${max}"),
+    columnCount: Yup.number().required("This field is required.").positive("Must be positive").integer("No Decimal").max(4, "Max of ${max}"),
   });
 
   const onSubmit = values => {
